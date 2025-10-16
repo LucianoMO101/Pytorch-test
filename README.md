@@ -1,5 +1,8 @@
 # 🧠 PyTorch Neural Network – Iris Dataset
 
+Gemaakt door Luciano Mollen
+Youtube tutorial die ik heb gevolgd hiervoor: https://www.youtube.com/watch?v=O9Jx93DAyw4&list=PLCC34OHNcOtpcgR9LEYSdi9r7XIbpkpK1&index=10
+
 ## Wat doet deze code eigenlijk?
 Je code bouwt, traint en test een **neuraal netwerk** dat leert om bloemen te herkennen op basis van hun eigenschappen (lengte en breedte van bloem en kelk).
 Het netwerk probeert dus te raden of het één van deze bloemen is:
