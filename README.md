@@ -9,9 +9,9 @@ Het netwerk probeert dus te raden of een bloem een:
 
 ### 🔹 Stap 1: De data
 Het Iris-dataset bevat 150 bloemen met deze kolommen:
-sepal.length	sepal.width	petal.length	petal.width	variety
-5.1	3.5	1.4	0.2	Setosa
-6.2	2.8	4.8	1.8	Virginica
+sepal.length	sepal.width       petal.length	petal.width	variety
+5.1	         3.5	         1.4	         0.2	         Setosa
+6.2	         2.8	         4.8	         1.8	         Virginica
 👉 Jij hebt de tekstlabels omgezet in cijfers (0, 1, 2) zodat het model ermee kan rekenen.
 ### 🔹 Stap 2: Het netwerk (de “hersenen”)
 Je model heeft drie lagen:
@@ -31,31 +31,32 @@ y_pred = model(X_train)
 ```
 Het netwerk krijgt de trainingsdata, berekent voorspellingen (zoals "ik denk dat dit een 0 is") en geeft die door aan de loss-functie.
 ### 🔹 Stap 4: De “loss” meten
+```
 loss = criterion(y_pred, y_train)
+```
 De loss (foutwaarde) geeft aan hoe slecht de voorspellingen zijn.
 Een hoge loss = veel fouten, een lage loss = beter model.
 In het begin is de loss groot, want het model raadt maar wat.
-🔹 Stap 5: Backpropagation (leren)
+### 🔹 Stap 5: Backpropagation (leren)
+```
 optimizer.zero_grad()
 loss.backward()
 optimizer.step()
+```
 Dit is waar het leren gebeurt:
-loss.backward() → rekent uit hoeveel schuld elk gewicht heeft aan de fout.
-optimizer.step() → past die gewichten een klein beetje aan (in de richting die de fout verlaagt).
-Dit proces wordt 100 keer herhaald (dat zijn de 100 epochs).
+- **1. loss.backward() → rekent uit hoeveel schuld elk gewicht heeft aan de fout.**
+- **2. optimizer.step() → past die gewichten een klein beetje aan (in de richting die de fout verlaagt).**
+- **3. Dit proces wordt 100 keer herhaald (dat zijn de 100 epochs).**
 Bij elke ronde (epoch) wordt de loss kleiner — het netwerk leert dus van zijn fouten!
-🔹 Stap 6: De grafiek
+### 🔹 Stap 6: De grafiek
+```
 plt.plot(range(epochs), losses)
+```
 Hiermee zie je visueel dat de loss in de loop van de epochs daalt.
 Dat betekent:
 📉 De fout van het netwerk neemt af
 📈 Het netwerk wordt beter in voorspellen
-🔹 Alles in één stuk code?
-Ja ✅
-Al deze losse cellen kun je gewoon in één groot Python-script zetten.
-In Colab is het handig om het in stappen te doen (om makkelijk te debuggen),
-maar in principe kun je dit allemaal in één cell doen — het resultaat is hetzelfde.
-🧩 Visuele uitleg
+### 🧩 Visuele uitleg
 Hier is een eenvoudige schematische weergave van wat er gebeurt:
          Invoer (X)
      ┌─────────────────┐
@@ -88,6 +89,7 @@ Hier is een eenvoudige schematische weergave van wat er gebeurt:
                │
                ▼
          Loss daalt per epoch (model leert)
+         
 En de grafiek aan het einde:
 Loss/Error
 │\
@@ -97,9 +99,9 @@ Loss/Error
 │    \__
 │_______\___________ Epochs →
 Hier zie je de fout dalen — het bewijs dat je netwerk leert.
-💡 In gewone woorden
+### 💡 In gewone woorden
 Een neuraal netwerk leert net zoals mensen leren:
-Je maakt in het begin veel fouten (hoge loss),
-Je kijkt wat er fout ging (backpropagation),
-Je past jezelf een beetje aan (optimizer),
-Na een tijdje word je beter (loss daalt).
+- **Je maakt in het begin veel fouten (hoge loss),**
+- **Je kijkt wat er fout ging (backpropagation),**
+- **Je past jezelf een beetje aan (optimizer),**
+- **Na een tijdje word je beter (loss daalt).**
