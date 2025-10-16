@@ -2,10 +2,10 @@
 
 ## 🧠 Wat doet deze code eigenlijk?
 Je code bouwt, traint en test een neuraal netwerk dat leert om bloemen te herkennen op basis van hun eigenschappen (lengte en breedte van bloem en kelk).
-Het netwerk probeert dus te raden of een bloem een:
+Het netwerk probeert dus te raden of het één van deze bloemen is:
 - **Setosa (0),** 
-- **Versicolor (1), of** 
-- **Virginica (2) is.** 
+- **Versicolor (1),** 
+- **Virginica (2)** 
 
 ### 🔹 Stap 1: De data
 Het Iris-dataset bevat 150 bloemen met deze kolommen:
